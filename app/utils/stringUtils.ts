@@ -18,3 +18,7 @@ export function formatDate(date: string) {
     day: 'numeric',
   });
 }
+
+export const isInclude = (fullText: string, text: string) => {
+  return fullText.toLowerCase().includes(text.toLowerCase());
+};

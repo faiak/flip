@@ -3,23 +3,52 @@
  */
 import * as types from './types';
 import { ITransactionsResponse } from 'app/models/api/transaction';
+import getList from 'app/services/transactions';
 
-export function getTransactions() {
+import type { AppDispatch } from '../index';
+import { SortByType } from 'app/models/reducers/transaction';
+
+export const getTransactions = () => {
   return {
     type: types.TRANSACTIONS_GET,
   };
-}
+};
 
-export function getTransactionsSuccess(payload: ITransactionsResponse) {
+export const getTransactionsSuccess = (payload: ITransactionsResponse) => {
   return {
     type: types.TRANSACTIONS_GET_SUCCESS,
     payload,
   };
-}
+};
 
-export function getTransactionsFailed(err) {
+export const getTransactionsFailed = err => {
   return {
     type: types.TRANSACTIONS_GET_FAILED,
     error: err,
   };
-}
+};
+
+export const sortTransactions = (sort_by: SortByType) => {
+  return {
+    type: types.TRANSACTIONS_SORT,
+    payload: sort_by,
+  };
+};
+
+export const searchTransactions = (keywords: string) => {
+  return {
+    type: types.TRANSACTIONS_SEARCH,
+    payload: keywords,
+  };
+};
+
+export const fetchTransactions = () => async (dispatch: AppDispatch) => {
+  dispatch(getTransactions());
+  getList()
+    .then(({ data }) => {
+      dispatch(getTransactionsSuccess(data));
+    })
+    .catch(error => {
+      dispatch(getTransactionsFailed(error));
+    });
+};

@@ -4,12 +4,8 @@
 import createReducer from 'app/lib/createReducer';
 import * as types from 'app/store/actions/types';
 
-import * as transactionActions from 'app/store/actions/transactionActions';
-
-import { ITransactionState } from 'app/models/reducers/transaction';
+import { ITransactionState, SortByType } from 'app/models/reducers/transaction';
 import { ITransactionsResponse } from 'app/models/api/transaction';
-import getList from 'app/services/transactions';
-import type { AppDispatch } from '../index';
 
 const initialState: ITransactionState = {
   data: {},
@@ -24,6 +20,8 @@ export const transactionReducer = createReducer(initialState, {
       ...state,
       isLoading: true,
       data: [],
+      sort_by: '',
+      keywords: '',
     };
   },
   [types.TRANSACTIONS_GET_SUCCESS]: (
@@ -35,16 +33,16 @@ export const transactionReducer = createReducer(initialState, {
   [types.TRANSACTIONS_GET_FAILED]: (state: ITransactionState) => {
     return { ...state, isLoaidng: false };
   },
+  [types.TRANSACTIONS_SORT]: (
+    state: ITransactionState,
+    { payload }: { payload: SortByType },
+  ) => {
+    return { ...state, sort_by: payload };
+  },
+  [types.TRANSACTIONS_SEARCH]: (
+    state: ITransactionState,
+    { payload }: { payload: string },
+  ) => {
+    return { ...state, keywords: payload };
+  },
 });
-
-export const getTransactions = () => async (dispatch: AppDispatch) => {
-  dispatch(transactionActions.getTransactions());
-  getList()
-    .then(({ data }) => {
-      console.log({ data: data });
-      dispatch(transactionActions.getTransactionsSuccess(data));
-    })
-    .catch(error => {
-      dispatch(transactionActions.getTransactionsFailed(error));
-    });
-};

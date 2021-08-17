@@ -27,7 +27,7 @@ const TransactionCard: React.FC<Props> = ({
   beneficiary_bank,
   beneficiary_name,
   amount,
-  completed_at,
+  created_at,
 }) => {
   return (
     <TouchableOpacity
@@ -51,7 +51,7 @@ const TransactionCard: React.FC<Props> = ({
           <Row>
             <Text>{formatMoney(amount)}</Text>
             <Icon name="record" size={5} />
-            <Text>{formatDate(completed_at)}</Text>
+            <Text>{formatDate(created_at)}</Text>
           </Row>
         </View>
         <Badge status={status} />

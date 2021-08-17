@@ -7,8 +7,12 @@ import NavigationService from 'app/navigation/NavigationService';
 import { TransactionHeader, TransactionCard } from 'app/components';
 import { ITransactionItem } from 'app/models/api/transaction';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { getTransactions } from 'app/store/reducers/transactionReducer';
 import transactionSelectors from 'app/store/selectors/transactionSelectors';
+import {
+  fetchTransactions,
+  sortTransactions,
+  searchTransactions,
+} from 'app/store/actions/transactionActions';
 
 interface IState {
   transactionReducer: ITransactionState;
@@ -20,7 +24,9 @@ const TransactionList: React.FC = () => {
   );
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getTransactions());
+    dispatch(fetchTransactions());
+    // dispatch(sortTransactions('NAME_ASC'));
+    // dispatch(searchTransactions('BCA'));
     return () => {};
   }, [dispatch]);
 
