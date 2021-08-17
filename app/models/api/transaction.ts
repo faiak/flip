@@ -1,8 +1,4 @@
-export interface ILoginResponse {
-  id: number;
-}
-
-export interface TransactionItem {
+export interface ITransactionItem {
   id: string;
   amount: number;
   unique_code: number;
@@ -15,4 +11,8 @@ export interface TransactionItem {
   created_at: string;
   completed_at: string;
   fee: number;
+}
+
+export interface ITransactionsResponse {
+  [id: string]: ITransactionItem;
 }

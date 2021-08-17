@@ -5,10 +5,10 @@ import Badge from './Badge';
 import styles from './styles';
 import { Text, Row } from 'app/components';
 import BaseIcon from 'react-native-vector-icons/Fontisto';
-import { TransactionItem } from 'app/models/api/login';
+import { ITransactionItem } from 'app/models/api/transaction';
 import { getBankName, formatMoney, formatDate } from 'app/utils/stringUtils';
 
-interface Props extends TransactionItem {}
+interface Props extends ITransactionItem {}
 
 const Icon: React.FC<{ name: string; size: number }> = ({ name, size }) => (
   <View style={styles.icon}>

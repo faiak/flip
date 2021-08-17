@@ -9,39 +9,25 @@ import TransactionList from 'app/screens/TransactionList';
 import Home from 'app/screens/Home';
 import ForgotPassword from 'app/screens/ForgotPassword';
 
-import ThemeController from '../components/ThemeController';
 import { StatusBar } from 'react-native';
-import { ILoginState } from 'app/models/reducers/login';
+import { ILoginState } from 'app/models/reducers/transaction';
 
 const Stack = createStackNavigator();
-const AuthStack = createStackNavigator();
-const LoggedInStack = createStackNavigator();
 
 const homeOptions = {
   title: 'Home',
   headerTitleStyle: {
     fontWeight: 'bold',
   },
-  headerRight: () => <ThemeController />,
 };
 
 interface IState {
-  loginReducer: ILoginState;
+  // loginReducer: ILoginState;
 }
 
 interface IProps {}
 
-const LoggedInNavigator = () => (
-  <LoggedInStack.Navigator>
-    <Stack.Screen name="Home" component={Home} options={homeOptions} />
-  </LoggedInStack.Navigator>
-);
-
 const App: React.FC<IProps> = (props: IProps) => {
-  const isLoggedIn = useSelector(
-    (state: IState) => state.loginReducer.isLoggedIn,
-  );
-
   return (
     <NavigationContainer ref={navigationRef}>
       <StatusBar barStyle={'dark-content'} />
@@ -57,11 +43,7 @@ const App: React.FC<IProps> = (props: IProps) => {
             }
           }
         />
-        <Stack.Screen
-          name="Home"
-          component={LoggedInNavigator}
-          options={homeOptions}
-        />
+        <Stack.Screen name="Home" component={Home} options={homeOptions} />
       </Stack.Navigator>
     </NavigationContainer>
   );

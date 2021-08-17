@@ -34,7 +34,7 @@ const TransactionHeader: React.FC = ({}) => {
               style={styles.textBoldOrange}
               color={colors.COLOR_ORANGE}
               type="bold">
-              Urutkan xxxxxx
+              Urutkan
             </Text>
           </View>
           <IconFeather
