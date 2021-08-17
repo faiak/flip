@@ -8,11 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* FlipTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FlipTestTests.m */; };
+		032286BCD0664C499C27B4C0 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4231259694A42C1B6A8199A /* Lato-Bold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1C1978EBB158453E96E6DC60 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BC3709DBD034A4D98986C24 /* Lato-Light.ttf */; };
+		39EB426EF0714229AADE670B /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16618F9C885540D3895DE673 /* Lato-Black.ttf */; };
+		3E1F409E75D2445F893BBA23 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7E11BD5E3E94CBFBB50A55F /* Lato-BoldItalic.ttf */; };
+		7D2C8C5AE77C47AEAA0B0CBD /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB29BED5D4BB4BD3CEFDF /* Lato-ThinItalic.ttf */; };
+		81239F99938D448FB39D6864 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FADF8D1DCDC1426DBD02AE6F /* Lato-Thin.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8C0034E753E707BEC7F6C22E /* libPods-FlipTest-FlipTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EEDA297F9E38174EFABD9F4 /* libPods-FlipTest-FlipTestTests.a */; };
+		9F982F149DCD481BB6D32746 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AACF4079F1A4D1481D56DC1 /* Lato-BlackItalic.ttf */; };
+		AED0D9000B3E4EE09DD94E63 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61EB73896B8D4997B22C6210 /* Lato-Italic.ttf */; };
+		B4AB4FD857A84D74AF58EBE1 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87B9CD97DC0B409E8E606899 /* Lato-Regular.ttf */; };
+		D259D34B2C014140AAB5A00D /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2D2EA66477349D386402B6B /* Lato-LightItalic.ttf */; };
 		D377B620A197FE77DAEA05BD /* libPods-FlipTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C44A80C424A9BAF97858DAB /* libPods-FlipTest.a */; };
 /* End PBXBuildFile section */
 
@@ -36,14 +46,40 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FlipTest/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FlipTest/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FlipTest/main.m; sourceTree = "<group>"; };
+		16618F9C885540D3895DE673 /* Lato-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Black.ttf"; path = "../assets/fonts/Lato-Black.ttf"; sourceTree = "<group>"; };
+		1CEE2B7256BD4216A8E8859C /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		26F594BF9E4A4779946F35C5 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		3246AEC5EAB049E4AF0689CF /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		3A7F12541681496F839E1BB7 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		3AC300A1B111489EB94C5DBA /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		400417AC72A94B65A10F77AD /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		470E56FE8E92402DAF0B1667 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		4D4258AD05F14E6FB2993C78 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		4E7FB29BED5D4BB4BD3CEFDF /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-ThinItalic.ttf"; path = "../assets/fonts/Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		5BC3709DBD034A4D98986C24 /* Lato-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Light.ttf"; path = "../assets/fonts/Lato-Light.ttf"; sourceTree = "<group>"; };
+		61EB73896B8D4997B22C6210 /* Lato-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Italic.ttf"; path = "../assets/fonts/Lato-Italic.ttf"; sourceTree = "<group>"; };
 		6380DA9E108DD561F30AD3C1 /* Pods-FlipTest-FlipTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTest-FlipTestTests.release.xcconfig"; path = "Target Support Files/Pods-FlipTest-FlipTestTests/Pods-FlipTest-FlipTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		6714FE58BD3310A8ED341F09 /* Pods-FlipTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTest.debug.xcconfig"; path = "Target Support Files/Pods-FlipTest/Pods-FlipTest.debug.xcconfig"; sourceTree = "<group>"; };
 		6EEDA297F9E38174EFABD9F4 /* libPods-FlipTest-FlipTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlipTest-FlipTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FD4A4CFD99D4072B49600DB /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		79C855F5C66B4B13A8B933CE /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		7C44A80C424A9BAF97858DAB /* libPods-FlipTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlipTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D59B39A6B434745A4EF5ED7 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FlipTest/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		87B9CD97DC0B409E8E606899 /* Lato-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Regular.ttf"; path = "../assets/fonts/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		8AACF4079F1A4D1481D56DC1 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-BlackItalic.ttf"; path = "../assets/fonts/Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		98980D675CA645B485D40FBC /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		9A951E1A2F08444EA321FA31 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		9DA2E65FB2FC3D85825B9BEC /* Pods-FlipTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTest.release.xcconfig"; path = "Target Support Files/Pods-FlipTest/Pods-FlipTest.release.xcconfig"; sourceTree = "<group>"; };
+		A26DE278F4F94793B2767686 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		B300D7274A5D4DA0AB87695F /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		C4231259694A42C1B6A8199A /* Lato-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Bold.ttf"; path = "../assets/fonts/Lato-Bold.ttf"; sourceTree = "<group>"; };
+		CCEA72B636AB423A8D8A1CC7 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		D2D2EA66477349D386402B6B /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-LightItalic.ttf"; path = "../assets/fonts/Lato-LightItalic.ttf"; sourceTree = "<group>"; };
 		D43AD0A9557CD35E97F2C388 /* Pods-FlipTest-FlipTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTest-FlipTestTests.debug.xcconfig"; path = "Target Support Files/Pods-FlipTest-FlipTestTests/Pods-FlipTest-FlipTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F7E11BD5E3E94CBFBB50A55F /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-BoldItalic.ttf"; path = "../assets/fonts/Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		FADF8D1DCDC1426DBD02AE6F /* Lato-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Thin.ttf"; path = "../assets/fonts/Lato-Thin.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +140,6 @@
 				D43AD0A9557CD35E97F2C388 /* Pods-FlipTest-FlipTestTests.debug.xcconfig */,
 				6380DA9E108DD561F30AD3C1 /* Pods-FlipTest-FlipTestTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -134,6 +169,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				244F76ECE4F9D42F4415AFD7 /* Pods */,
+				D99901162B394CEBB560CF19 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +183,39 @@
 				00E356EE1AD99517003FC87E /* FlipTestTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D99901162B394CEBB560CF19 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				16618F9C885540D3895DE673 /* Lato-Black.ttf */,
+				8AACF4079F1A4D1481D56DC1 /* Lato-BlackItalic.ttf */,
+				C4231259694A42C1B6A8199A /* Lato-Bold.ttf */,
+				F7E11BD5E3E94CBFBB50A55F /* Lato-BoldItalic.ttf */,
+				61EB73896B8D4997B22C6210 /* Lato-Italic.ttf */,
+				5BC3709DBD034A4D98986C24 /* Lato-Light.ttf */,
+				D2D2EA66477349D386402B6B /* Lato-LightItalic.ttf */,
+				87B9CD97DC0B409E8E606899 /* Lato-Regular.ttf */,
+				FADF8D1DCDC1426DBD02AE6F /* Lato-Thin.ttf */,
+				4E7FB29BED5D4BB4BD3CEFDF /* Lato-ThinItalic.ttf */,
+				79C855F5C66B4B13A8B933CE /* AntDesign.ttf */,
+				B300D7274A5D4DA0AB87695F /* Entypo.ttf */,
+				4D4258AD05F14E6FB2993C78 /* EvilIcons.ttf */,
+				470E56FE8E92402DAF0B1667 /* Feather.ttf */,
+				9A951E1A2F08444EA321FA31 /* FontAwesome.ttf */,
+				1CEE2B7256BD4216A8E8859C /* FontAwesome5_Brands.ttf */,
+				3AC300A1B111489EB94C5DBA /* FontAwesome5_Regular.ttf */,
+				400417AC72A94B65A10F77AD /* FontAwesome5_Solid.ttf */,
+				7D59B39A6B434745A4EF5ED7 /* Fontisto.ttf */,
+				3246AEC5EAB049E4AF0689CF /* Foundation.ttf */,
+				98980D675CA645B485D40FBC /* Ionicons.ttf */,
+				CCEA72B636AB423A8D8A1CC7 /* MaterialCommunityIcons.ttf */,
+				6FD4A4CFD99D4072B49600DB /* MaterialIcons.ttf */,
+				26F594BF9E4A4779946F35C5 /* Octicons.ttf */,
+				3A7F12541681496F839E1BB7 /* SimpleLineIcons.ttf */,
+				A26DE278F4F94793B2767686 /* Zocial.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +314,16 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				39EB426EF0714229AADE670B /* Lato-Black.ttf in Resources */,
+				9F982F149DCD481BB6D32746 /* Lato-BlackItalic.ttf in Resources */,
+				032286BCD0664C499C27B4C0 /* Lato-Bold.ttf in Resources */,
+				3E1F409E75D2445F893BBA23 /* Lato-BoldItalic.ttf in Resources */,
+				AED0D9000B3E4EE09DD94E63 /* Lato-Italic.ttf in Resources */,
+				1C1978EBB158453E96E6DC60 /* Lato-Light.ttf in Resources */,
+				D259D34B2C014140AAB5A00D /* Lato-LightItalic.ttf in Resources */,
+				B4AB4FD857A84D74AF58EBE1 /* Lato-Regular.ttf in Resources */,
+				81239F99938D448FB39D6864 /* Lato-Thin.ttf in Resources */,
+				7D2C8C5AE77C47AEAA0B0CBD /* Lato-ThinItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = FlipTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -510,7 +589,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				INFOPLIST_FILE = FlipTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 import { navigationRef } from './NavigationService';
 
-import Login from 'app/screens/Login';
+import TransactionList from 'app/screens/TransactionList';
 import Home from 'app/screens/Home';
 import ForgotPassword from 'app/screens/ForgotPassword';
 
@@ -29,39 +29,7 @@ interface IState {
   loginReducer: ILoginState;
 }
 
-interface IProps {
-  theme: Theme;
-}
-
-const AuthNavigator = () => {
-  const isLoggedIn = useSelector(
-    (state: IState) => state.loginReducer.isLoggedIn,
-  );
-  return (
-    <AuthStack.Navigator>
-      <Stack.Screen
-        name="Login"
-        component={Login}
-        options={{
-          // When logging out, a pop animation feels intuitive
-          // You can remove this if you want the default 'push' animation
-          animationTypeForReplace: isLoggedIn ? 'push' : 'pop',
-          headerRight: () => <ThemeController />,
-        }}
-      />
-      <Stack.Screen
-        name="ForgotPassword"
-        component={ForgotPassword}
-        options={{
-          // When logging out, a pop animation feels intuitive
-          // You can remove this if you want the default 'push' animation
-          animationTypeForReplace: isLoggedIn ? 'push' : 'pop',
-          headerRight: () => <ThemeController />,
-        }}
-      />
-    </AuthStack.Navigator>
-  );
-};
+interface IProps {}
 
 const LoggedInNavigator = () => (
   <LoggedInStack.Navigator>
@@ -70,34 +38,30 @@ const LoggedInNavigator = () => (
 );
 
 const App: React.FC<IProps> = (props: IProps) => {
-  const { theme } = props;
   const isLoggedIn = useSelector(
     (state: IState) => state.loginReducer.isLoggedIn,
   );
 
   return (
-    <NavigationContainer ref={navigationRef} theme={theme}>
-      <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} />
+    <NavigationContainer ref={navigationRef}>
+      <StatusBar barStyle={'dark-content'} />
 
       <Stack.Navigator headerMode="none">
-        {isLoggedIn ? (
-          <Stack.Screen
-            name="Home"
-            component={LoggedInNavigator}
-            options={homeOptions}
-          />
-        ) : (
-          <Stack.Screen
-            name="Login"
-            component={AuthNavigator}
-            options={{
+        <Stack.Screen
+          name="TransactionList"
+          component={TransactionList}
+          options={
+            {
               // When logging out, a pop animation feels intuitive
               // You can remove this if you want the default 'push' animation
-              animationTypeForReplace: isLoggedIn ? 'push' : 'pop',
-              headerRight: () => <ThemeController />,
-            }}
-          />
-        )}
+            }
+          }
+        />
+        <Stack.Screen
+          name="Home"
+          component={LoggedInNavigator}
+          options={homeOptions}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
