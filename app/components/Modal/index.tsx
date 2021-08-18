@@ -15,17 +15,10 @@ type Props = {
   visible: boolean;
   onPress: Function;
   selected: SortByType;
+  list: object;
 };
 
-const Modal: React.FC<Props> = ({ visible, onPress, selected }) => {
-  const list: { [id: number]: string } = {
-    [SortByType.DEFAULT]: 'URUTKAN',
-    [SortByType.NAME_ASC]: 'Nama A-Z',
-    [SortByType.NAME_DESC]: 'Nama Z-A',
-    [SortByType.DATE_DESC]: 'Tanggal Terbaru',
-    [SortByType.DATE_ASC]: 'Tanggal Terlama',
-  };
-
+const Modal: React.FC<Props> = ({ visible, onPress, selected, list = {} }) => {
   return (
     <BaseModal
       animationType="fade"
