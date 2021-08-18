@@ -9,7 +9,7 @@ import rootReducers from 'app/store/reducers'; // where reducers is a object of 
 const config = {
   key: 'root',
   storage: AsyncStorage,
-  blacklist: ['loadingReducer'],
+  blacklist: ['transactionReducer'],
   debug: true, //to get useful logging
 };
 

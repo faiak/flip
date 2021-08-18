@@ -28,10 +28,10 @@ export const getTransactionsFailed = err => {
   };
 };
 
-export const sortTransactions = (sort_by: SortByType) => {
+export const sortTransactions = (sortBy: SortByType) => {
   return {
     type: types.TRANSACTIONS_SORT,
-    payload: sort_by,
+    payload: sortBy,
   };
 };
 

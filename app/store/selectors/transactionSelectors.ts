@@ -35,9 +35,16 @@ export default {
     transactionReducer: ITransactionState;
   }) => {
     let data = Object.values(transactionReducer.data);
-    data = sortData(data, transactionReducer.sort_by);
+    data = sortData(data, transactionReducer.sortBy);
     data = filterData(data, transactionReducer.keywords);
 
     return data;
+  },
+  getLoading: ({
+    transactionReducer,
+  }: {
+    transactionReducer: ITransactionState;
+  }) => {
+    return transactionReducer.isLoading;
   },
 };

@@ -11,7 +11,7 @@ const initialState: ITransactionState = {
   data: {},
   isLoading: false,
   keywords: '',
-  sort_by: '',
+  sortBy: '',
 };
 
 export const transactionReducer = createReducer(initialState, {
@@ -20,7 +20,7 @@ export const transactionReducer = createReducer(initialState, {
       ...state,
       isLoading: true,
       data: [],
-      sort_by: '',
+      sortBy: '',
       keywords: '',
     };
   },
@@ -37,7 +37,7 @@ export const transactionReducer = createReducer(initialState, {
     state: ITransactionState,
     { payload }: { payload: SortByType },
   ) => {
-    return { ...state, sort_by: payload };
+    return { ...state, sortBy: payload };
   },
   [types.TRANSACTIONS_SEARCH]: (
     state: ITransactionState,
