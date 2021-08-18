@@ -1,7 +1,12 @@
+import { colors } from 'app/config/styles';
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  container: { backgroundColor: '#F5F9F8', flex: 1, paddingHorizontal: 6 },
+  container: {
+    backgroundColor: colors.COLOR_BACKGROUND,
+    flex: 1,
+    paddingHorizontal: 6,
+  },
 });
 
 export default styles;

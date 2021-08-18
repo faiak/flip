@@ -1,15 +1,15 @@
 import React, { ReactNode } from 'react';
+import { StyleProp, ViewStyle } from 'react-native';
 import { View } from 'react-native';
 import styles from './styles';
 
 type Props = {
   children: ReactNode;
+  style?: StyleProp<ViewStyle>;
 };
 
-// const Text: React.FC = (props: Props) => {
-const Row: React.FC<Props> = ({ children }) => {
-  // const { variant = 'normal', textTransform = 'none', color, style, x } = props;
-  return <View style={styles.row}>{children}</View>;
+const Row: React.FC<Props> = ({ children, style }) => {
+  return <View style={[styles.row, style]}>{children}</View>;
 };
 
 export default Row;
