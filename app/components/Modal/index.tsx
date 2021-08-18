@@ -1,5 +1,5 @@
 import { colors } from 'app/config/styles';
-import React, { useState } from 'react';
+import React from 'react';
 import {
   View,
   Modal as BaseModal,
@@ -57,9 +57,8 @@ const Modal: React.FC<Props> = ({ visible, onPress, selected }) => {
                   <Text
                     size={14}
                     wrapperStyle={styles.wrapTextModal}
-                    style={styles.textModal}
                     color={colors.COLOR_BLACK_TWO}>
-                    {list[key]}
+                    {list[keyNum]}
                   </Text>
                 </TouchableOpacity>
               );

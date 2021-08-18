@@ -11,7 +11,7 @@ const initialState: ITransactionState = {
   data: {},
   isLoading: false,
   keywords: '',
-  sortBy: '',
+  sortBy: SortByType.DEFAULT,
   error: false,
 };
 
