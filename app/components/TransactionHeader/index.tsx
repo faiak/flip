@@ -44,7 +44,7 @@ const TransactionHeader: React.FC = ({}) => {
           </View>
           <View>
             <TextInput
-              style={keyword ? styles.input : {}}
+              style={[keyword ? styles.input : {}]}
               onChangeText={onChangeText}
               value={keyword}
               placeholder="Cari nama, bank atau nominal"
@@ -52,8 +52,8 @@ const TransactionHeader: React.FC = ({}) => {
           </View>
         </View>
         <TouchableOpacity
-          style={styles.wrapViewRightContent}
-          onPress={() => setModalVisible(true)}>
+          onPress={() => setModalVisible(true)}
+          style={styles.wrapViewRightContent}>
           <Text
             wrapperStyle={styles.wrapTextSort}
             style={styles.textBoldOrange}

@@ -15,13 +15,14 @@ const styles = StyleSheet.create({
   },
   wrapViewLeftContent: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
+    flex: 1,
+    paddingRight: 32,
   },
   wrapViewIcSearch: { paddingRight: 8 },
   wrapViewRightContent: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    // justifyContent: 'space-between',
     alignItems: 'center',
   },
   wrapTextSort: { paddingRight: 2 },
