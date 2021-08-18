@@ -17,6 +17,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { colors } from 'app/config/styles';
 import { formatDate, formatMoney } from 'app/utils/stringUtils';
 import { RootStackParamList } from 'app/navigation/NavigationStack';
+import Snackbar from 'react-native-snackbar';
+import Clipboard from '@react-native-clipboard/clipboard';
 
 type TransactionDetailRouteProp = RouteProp<
   RootStackParamList,
@@ -30,6 +32,14 @@ const TransactionDetail: React.FC = () => {
     transactionSelectors.getTransactionById(state, params?.id),
   );
 
+  const onCopy = () => {
+    Clipboard.setString(data.id);
+    Snackbar.show({
+      text: 'Copied to clipboard',
+      // duration: Snackbar.LENGTH_SHORT,
+    });
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ backgroundColor: colors.COLOR_WHITE }}>
@@ -38,7 +48,7 @@ const TransactionDetail: React.FC = () => {
             size={15}
             wrapperStyle={styles.wrapperIdTxn}
             type="bold">{`ID TRANSAKSI:#${data.id}`}</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={onCopy}>
             <Icon name="copy-outline" size={18} color={colors.COLOR_ORANGE} />
           </TouchableOpacity>
         </Row>
