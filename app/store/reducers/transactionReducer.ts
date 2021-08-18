@@ -12,6 +12,7 @@ const initialState: ITransactionState = {
   isLoading: false,
   keywords: '',
   sortBy: '',
+  error: false,
 };
 
 export const transactionReducer = createReducer(initialState, {
@@ -20,8 +21,9 @@ export const transactionReducer = createReducer(initialState, {
       ...state,
       isLoading: true,
       data: [],
-      sortBy: '',
+      sortBy: SortByType.DEFAULT,
       keywords: '',
+      error: false,
     };
   },
   [types.TRANSACTIONS_GET_SUCCESS]: (
@@ -31,7 +33,7 @@ export const transactionReducer = createReducer(initialState, {
     return { ...state, data: payload, isLoading: false };
   },
   [types.TRANSACTIONS_GET_FAILED]: (state: ITransactionState) => {
-    return { ...state, isLoaidng: false };
+    return { ...state, isLoaidng: false, error: true };
   },
   [types.TRANSACTIONS_SORT]: (
     state: ITransactionState,

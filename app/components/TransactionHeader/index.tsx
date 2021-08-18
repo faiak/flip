@@ -4,10 +4,28 @@ import styles from './styles';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 import IconFeather from 'react-native-vector-icons/Feather';
 import { colors } from 'app/config/styles';
-import { Text } from 'app/components';
+import { Text, Modal } from 'app/components';
+import { SortByType } from 'app/models/reducers/transaction';
+import {
+  searchTransactions,
+  sortTransactions,
+} from 'app/store/actions/transactionActions';
+import { useDispatch, useSelector } from 'react-redux';
+import transactionSelectors from 'app/store/selectors/transactionSelectors';
+import { IRootState } from 'app/store';
 
 const TransactionHeader: React.FC = ({}) => {
-  const [text, onChangeText] = useState('');
+  const [modalVisible, setModalVisible] = useState(false);
+  const dispatch = useDispatch();
+  const keyword = useSelector((state: IRootState) =>
+    transactionSelectors.getKeyword(state),
+  );
+  const sortBy = useSelector((state: IRootState) =>
+    transactionSelectors.getSortBy(state),
+  );
+  const onChangeText = (value: string) => {
+    dispatch(searchTransactions(value));
+  };
 
   return (
     <View style={styles.container}>
@@ -18,25 +36,23 @@ const TransactionHeader: React.FC = ({}) => {
           </View>
           <View>
             <TextInput
-              style={text ? styles.input : {}}
+              style={keyword ? styles.input : {}}
               onChangeText={onChangeText}
-              value={text}
+              value={keyword}
               placeholder="Cari nama, bank atau nominal"
             />
-            {/* <Text style={styles.textMediumGrey}>
-              Cari nama, bank, atau nominal
-            </Text> */}
           </View>
         </View>
-        <TouchableOpacity style={styles.wrapViewRightContent}>
-          <View style={styles.wrapTextSort}>
-            <Text
-              style={styles.textBoldOrange}
-              color={colors.COLOR_ORANGE}
-              type="bold">
-              Urutkan
-            </Text>
-          </View>
+        <TouchableOpacity
+          style={styles.wrapViewRightContent}
+          onPress={() => setModalVisible(true)}>
+          <Text
+            wrapperStyle={styles.wrapTextSort}
+            style={styles.textBoldOrange}
+            color={colors.COLOR_ORANGE}
+            type="bold">
+            Urutkan
+          </Text>
           <IconFeather
             name="chevron-down"
             size={24}
@@ -44,6 +60,16 @@ const TransactionHeader: React.FC = ({}) => {
           />
         </TouchableOpacity>
       </View>
+      <Modal
+        visible={modalVisible}
+        selected={sortBy}
+        onPress={(selectedSort: SortByType) => {
+          setModalVisible(false);
+          if (selectedSort !== undefined && selectedSort !== null) {
+            dispatch(sortTransactions(selectedSort));
+          }
+        }}
+      />
     </View>
   );
 };

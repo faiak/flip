@@ -6,30 +6,17 @@ import React from 'react';
 import { ActivityIndicator } from 'react-native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
-import { Provider as PaperProvider } from 'react-native-paper';
 
 import Navigator from 'app/navigation';
 import configureStore from 'app/store';
 
 const { persistor, store } = configureStore();
 
-interface IState {}
-
-const RootNavigation: React.FC = () => {
-  // const isDark = useSelector((state: IState) => state.themeReducer.isDark);
-
-  return (
-    <PaperProvider>
-      <Navigator />
-    </PaperProvider>
-  );
-};
-
 const EntryPoint: React.FC = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={<ActivityIndicator />} persistor={persistor}>
-        <RootNavigation />
+        <Navigator />
       </PersistGate>
     </Provider>
   );

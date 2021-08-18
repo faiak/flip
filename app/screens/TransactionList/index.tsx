@@ -1,51 +1,58 @@
 import React, { useEffect } from 'react';
-import { FlatList, RefreshControl, View } from 'react-native';
+import { FlatList, RefreshControl } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './styles';
-import { ITransactionState } from 'app/models/reducers/transaction';
 import NavigationService from 'app/navigation/NavigationService';
-import { TransactionHeader, TransactionCard, Text } from 'app/components';
+import {
+  TransactionHeader,
+  TransactionCard,
+  Empty,
+  Text,
+} from 'app/components';
 import { ITransactionItem } from 'app/models/api/transaction';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import transactionSelectors from 'app/store/selectors/transactionSelectors';
-import {
-  fetchTransactions,
-  sortTransactions,
-  searchTransactions,
-} from 'app/store/actions/transactionActions';
+import { fetchTransactions } from 'app/store/actions/transactionActions';
 import { colors } from 'app/config/styles';
-import Loading from 'app/components/Loading';
-import Empty from 'app/components/Empty';
-
-interface IState {
-  transactionReducer: ITransactionState;
-}
+import { IRootState } from 'app/store';
 
 const TransactionList: React.FC = () => {
-  const data = useSelector((state: IState) =>
+  const data = useSelector((state: IRootState) =>
     transactionSelectors.getTransactions(state),
   );
-  const isLoading = useSelector((state: IState) =>
+  const isLoading = useSelector((state: IRootState) =>
     transactionSelectors.getLoading(state),
+  );
+  const isError = useSelector((state: IRootState) =>
+    transactionSelectors.getError(state),
   );
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchTransactions());
-    // dispatch(sortTransactions('NAME_ASC'));
-    // dispatch(searchTransactions('BCA'));
     return () => {};
   }, [dispatch]);
 
-  // const onForgot = () => NavigationService.navigate('ForgotPassword');
+  const onDetail = (id: string) =>
+    NavigationService.navigate('TransactionDetail', { id });
 
   return (
     <SafeAreaView style={styles.container}>
       <TransactionHeader />
 
+      {isError ? (
+        <Text>Woops!.. something went wrong. Please reload the page</Text>
+      ) : null}
       <FlatList
         data={data}
         renderItem={({ item }: { item: ITransactionItem }) => {
-          return <TransactionCard {...item} />;
+          return (
+            <TransactionCard
+              {...item}
+              onPress={() => {
+                onDetail(item.id);
+              }}
+            />
+          );
         }}
         keyExtractor={item => item.id}
         showsVerticalScrollIndicator={false}

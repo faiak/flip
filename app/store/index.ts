@@ -5,6 +5,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
 import rootReducers from 'app/store/reducers'; // where reducers is a object of reducers
+import { ITransactionState } from 'app/models/reducers/transaction';
 
 const config = {
   key: 'root',
@@ -21,12 +22,9 @@ if (__DEV__) {
 } else {
   enhancers = [applyMiddleware(thunk)];
 }
-// const initialState = {};
 const persistConfig: any = { enhancers };
 const store = createStore(reducers, undefined, compose(...enhancers));
-const persistor = persistStore(store, persistConfig, () => {
-  //   console.log('Test', store.getState());
-});
+const persistor = persistStore(store, persistConfig, () => {});
 const configureStore = () => {
   return { persistor, store };
 };
@@ -37,3 +35,6 @@ export default configureStore;
 export type RootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;
+export interface IRootState {
+  transactionReducer: ITransactionState;
+}
