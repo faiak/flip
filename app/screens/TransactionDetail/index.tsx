@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
 import { useSelector } from 'react-redux';
@@ -28,6 +28,8 @@ type TransactionDetailRouteProp = RouteProp<
 const TransactionDetail: React.FC = () => {
   const { params } = useRoute<TransactionDetailRouteProp>();
 
+  const [isShow, setIsShow] = useState(true);
+
   const data = useSelector((state: { transactionReducer: ITransactionState }) =>
     transactionSelectors.getTransactionById(state, params?.id),
   );
@@ -36,8 +38,11 @@ const TransactionDetail: React.FC = () => {
     Clipboard.setString(data.id);
     Snackbar.show({
       text: 'Copied to clipboard',
-      // duration: Snackbar.LENGTH_SHORT,
     });
+  };
+
+  const onShow = () => {
+    setIsShow(!isShow);
   };
 
   return (
@@ -56,45 +61,50 @@ const TransactionDetail: React.FC = () => {
           <Text size={15} type="bold">
             DETAIL TRANSAKSI
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={onShow}>
             <Text size={15} color={colors.COLOR_ORANGE}>
-              Tutup
+              {isShow ? 'Tutup' : 'Buka'}
             </Text>
           </TouchableOpacity>
         </Row>
-        <View style={[styles.row, styles.rowContent]}>
-          <TransactionCardBank
-            size={18}
-            beneficiary_bank={data.beneficiary_bank}
-            sender_bank={data.sender_bank}
-          />
-          <Row>
-            <TransactionContent
-              first
-              title={data.beneficiary_name}
-              content={data.account_number}
+        {isShow && (
+          <View style={[styles.row, styles.rowContent]}>
+            <TransactionCardBank
+              size={18}
+              beneficiary_bank={data.beneficiary_bank}
+              sender_bank={data.sender_bank}
             />
-            <TransactionContent
-              title="NOMINAL"
-              content={formatMoney(data.amount)}
-            />
-          </Row>
-          <Row>
-            <TransactionContent
-              first
-              title="BERITA TRANSFER"
-              content={data.remark}
-            />
-            <TransactionContent title="KODE UNIK" content={data.unique_code} />
-          </Row>
-          <Row>
-            <TransactionContent
-              first
-              title="WAKTU DIBUAT"
-              content={formatDate(data.created_at)}
-            />
-          </Row>
-        </View>
+            <Row>
+              <TransactionContent
+                first
+                title={data.beneficiary_name}
+                content={data.account_number}
+              />
+              <TransactionContent
+                title="NOMINAL"
+                content={formatMoney(data.amount)}
+              />
+            </Row>
+            <Row>
+              <TransactionContent
+                first
+                title="BERITA TRANSFER"
+                content={data.remark}
+              />
+              <TransactionContent
+                title="KODE UNIK"
+                content={data.unique_code}
+              />
+            </Row>
+            <Row>
+              <TransactionContent
+                first
+                title="WAKTU DIBUAT"
+                content={formatDate(data.created_at)}
+              />
+            </Row>
+          </View>
+        )}
       </View>
     </SafeAreaView>
   );
