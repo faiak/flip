@@ -14,6 +14,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import transactionSelectors from 'app/store/selectors/transactionSelectors';
 import { IRootState } from 'app/store';
 
+const list: { [id: number]: string } = {
+  [SortByType.DEFAULT]: 'URUTKAN',
+  [SortByType.NAME_ASC]: 'Nama A-Z',
+  [SortByType.NAME_DESC]: 'Nama Z-A',
+  [SortByType.DATE_DESC]: 'Tanggal Terbaru',
+  [SortByType.DATE_ASC]: 'Tanggal Terlama',
+};
+
 const TransactionHeader: React.FC = ({}) => {
   const [modalVisible, setModalVisible] = useState(false);
   const dispatch = useDispatch();
@@ -51,7 +59,7 @@ const TransactionHeader: React.FC = ({}) => {
             style={styles.textBoldOrange}
             color={colors.COLOR_ORANGE}
             type="bold">
-            Urutkan
+            {list[sortBy]}
           </Text>
           <IconFeather
             name="chevron-down"
@@ -61,6 +69,7 @@ const TransactionHeader: React.FC = ({}) => {
         </TouchableOpacity>
       </View>
       <Modal
+        list={list}
         visible={modalVisible}
         selected={sortBy}
         onPress={(selectedSort: SortByType) => {
